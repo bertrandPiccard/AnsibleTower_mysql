@@ -1,0 +1,15 @@
+---
+
+- name: Create a new database  
+  mysql_db: name=testdb state=present
+    
+- name: Add sample data to database  
+  copy: src=dump.sql dest=/tmp/dump.sql  
+
+- name: Insert sample data into database  
+  mysql_db: name=testdb state=import target=/tmp/dump.sql
+
+#- name: Delete database
+ # mysql_db:
+  #  name: testdb
+   # state: absent
