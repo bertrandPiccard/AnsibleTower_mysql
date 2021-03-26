@@ -1,0 +1,13 @@
+---
+#Uninstall the old version
+
+- name: Stop MariaDB server process 
+  command: systemctl stop mariadb
+    
+- name: Uninstall via YUM
+  command: yum remove "MariaDB-*" -y
+
+- name: Uninstall Galera package as well 
+  command: yum remove galera-4 -y
+
+
