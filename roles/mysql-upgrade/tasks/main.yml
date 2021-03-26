@@ -29,9 +29,11 @@
 - name: Install MariaDB server
   command: yum install MariaDB-server MariaDB-backup -y
 
-- name: Start mariadb and upgrade
+- name: Start mariadb
   command: systemctl start mariadb
   command: systemctl enable mariadb
+  
+- name: Upgrade MariaDB
   command: mariadb-upgrade
 
 
