@@ -13,18 +13,24 @@
   command: yum remove galera-4 -y
   ignore_errors: yes
   
-- name: Packages to be remove
+- name: Packages to remove
   command: rpm --query --all | grep -i -E "mariadb|galera"
   register: rpm_packages
   ignore_errors: yes
   
 #Install new version
 
-- name: Install wget and get MariaDB
+- name: Install wget
   command: yum install wget -y
+
+- name: Download MariaDB
   command: wget https://downloads.mariadb.com/MariaDB/mariadb_repo_setup
+
+- name: Privilege on mariadb repo setup
   command: chmod +x mariadb_repo_setup
-  command: ./mariadb_repo_setup --mariadb-server-version="mariadb-10.5"
+
+- name: Set mariadb repo setup version
+  command: ./mariadb_repo_setup --mariadb-server-version="mariadb-10.3"
   
 - name: Install MariaDB server
   command: yum install MariaDB-server MariaDB-backup -y
