@@ -31,9 +31,9 @@
 
 - name: Start mariadb
   command: systemctl start mariadb
-  command: systemctl enable mariadb
   
-- name: Upgrade MariaDB
-  command: mariadb-upgrade
+- name: Enable mariadb
+  command: systemctl enable mariadb
+
 
 
