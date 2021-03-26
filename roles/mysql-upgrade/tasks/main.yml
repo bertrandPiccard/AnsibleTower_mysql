@@ -21,17 +21,15 @@
 #Install new version
 
 - name: Install wget and get MariaDB
-  command: |
-    yum install wget
-    wget https://downloads.mariadb.com/MariaDB/mariadb_repo_setup
-    chmod +x mariadb_repo_setup
-    sudo ./mariadb_repo_setup --mariadb-server-version="mariadb-10.5"
+  command: yum install wget
+  command: wget https://downloads.mariadb.com/MariaDB/mariadb_repo_setup
+  command: chmod +x mariadb_repo_setup
+  command: sudo ./mariadb_repo_setup --mariadb-server-version="mariadb-10.5"
   
 - name: Install MariaDB server
-  command: |
-    yum install MariaDB-server MariaDB-backup
-    systemctl start mariadb
-    systemctl enable mariadb
-    mariadb-upgrade
+  command: yum install MariaDB-server MariaDB-backup
+  command: systemctl start mariadb
+  command: systemctl enable mariadb
+  command: mariadb-upgrade
 
 
