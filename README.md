@@ -7,7 +7,7 @@
 There are 2 playbooks:
 
 - **mysql-playbook**: That uses a role from [geerlingguy](https://github.com/geerlingguy/ansible-role-mysql), which install MySQL on almost any kind of OS and a second role that creates a database and fill it data.
-- **mysql-upgrade**: It uses mysql-upgrade role to uninstall and install a specific version of MySQL.
+- **mysql-upgrade**: It uses mysql-upgrade role to uninstall and install a specific version of MySQL. Warning, no backup are made before updating.
 
 Roles:
 
@@ -219,7 +219,7 @@ Supported OS:
 
 Browser:
 
-- Google Chrom
+- Google Chrome
 - Mozilla Firefox
 
 Hardware:
@@ -276,7 +276,7 @@ Here is an example of templates:
 
 4. Credentials are used for authentification and here in this case as we are using Ansible Vault, we had to make a credentials especially for that, so we don't have to enter passwork when running the job.
 
-### Use Git Hub repository as project
+### Use GitHub repository as project
 
 Here is an example of project that use my GitHub repository:
 ![Example of project](./images/tower_project.JPG)
